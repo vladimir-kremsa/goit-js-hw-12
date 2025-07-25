@@ -10,12 +10,15 @@ import {
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const form = document.querySelector('#search-form');
-const loadMoreBtn = document.querySelector('#load-more');
+const form = document.querySelector('.form');
+const loadMoreBtn = document.querySelector('.load-more');
 
 let currentQuery = '';
 let currentPage = 1;
 let totalHits = 0;
+
+hideLoader();
+hideLoadMoreButton();
 
 form.addEventListener('submit', async e => {
   e.preventDefault();
